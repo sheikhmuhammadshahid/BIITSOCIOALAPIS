@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BIITSOCIOModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Allocation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="emp_no" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="course_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="semester_no" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="section" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Discipline" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="semC" Type="Int32" />
+    <Property Name="SOS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="chat">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="userid" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="chat_id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateTime" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="chatTo" Type="Int32" />
+    <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="url" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="commentsOn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userid" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="postId" Type="Int32" />
+    <Property Name="dateTime" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="course">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="course_no" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="course_desc" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="title" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="crsEnrp">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="REG_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DISCIPLINE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="course_no" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="emp_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="semester_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Attempt_no" Type="Int32" />
+    <Property Name="grade" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DateSheet">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Day" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Section" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="course" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="time" Type="Time" Precision="7" />
+  </EntityType>
+  <EntityType Name="Diary">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="post_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="FriendRequest">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="RequestedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="RequestedTo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="GroupChat">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="chatId" Type="Int32" />
+    <Property Name="groupId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Admin" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="profile" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="isOfficial" Type="Boolean" />
+    <Property Name="date" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="memberCount" Type="Int32" />
+    <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="notification">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="body" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NotificationTo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="dateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="post_id" Type="Int32" />
+    <Property Name="fromWall" Type="Int32" />
+    <Property Name="ifOfficial" Type="Boolean" />
+    <Property Name="notificationFrom" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="postedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="dateTime" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="postFor" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="likesCount" Type="Int32" />
+    <Property Name="CommentsCount" Type="Int32" />
+    <Property Name="user" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fromWall" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="React">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userid" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="postId" Type="Int32" />
+    <Property Name="emogie" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SharedPost">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="postId" Type="Int32" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sharedBy" Type="Int32" />
+    <Property Name="sharedTo" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Society">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="profileImage" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="storiesCount" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Story">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="societyId" Type="Int32" />
+    <Property Name="url" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="color" Type="Int32" />
+    <Property Name="time" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="aridNo" />
+    </Key>
+    <Property Name="aridNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cnic" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="section" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="sonOf" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Teacher">
+    <Key>
+      <PropertyRef Name="cnic" />
+    </Key>
+    <Property Name="isTeachingTo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="cnic" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Timetable">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="slot" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="monday" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="tuesday" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="wednesday" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="thursday" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="friday" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="teacherName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="courseName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="section" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UserGroup">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="groupId" Type="Int32" />
+    <Property Name="userId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="CNIC" />
+    </Key>
+    <Property Name="CNIC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="profileImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="userType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="token" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="BIITSOCIOEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Allocations" EntityType="Self.Allocation" />
+    <EntitySet Name="chats" EntityType="Self.chat" />
+    <EntitySet Name="commentsOns" EntityType="Self.commentsOn" />
+    <EntitySet Name="courses" EntityType="Self.course" />
+    <EntitySet Name="crsEnrps" EntityType="Self.crsEnrp" />
+    <EntitySet Name="DateSheets" EntityType="Self.DateSheet" />
+    <EntitySet Name="Diaries" EntityType="Self.Diary" />
+    <EntitySet Name="FriendRequests" EntityType="Self.FriendRequest" />
+    <EntitySet Name="GroupChats" EntityType="Self.GroupChat" />
+    <EntitySet Name="Groups" EntityType="Self.Group" />
+    <EntitySet Name="notifications" EntityType="Self.notification" />
+    <EntitySet Name="Posts" EntityType="Self.Post" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="Reacts" EntityType="Self.React" />
+    <EntitySet Name="SharedPosts" EntityType="Self.SharedPost" />
+    <EntitySet Name="Societies" EntityType="Self.Society" />
+    <EntitySet Name="Stories" EntityType="Self.Story" />
+    <EntitySet Name="students" EntityType="Self.student" />
+    <EntitySet Name="Teachers" EntityType="Self.Teacher" />
+    <EntitySet Name="Timetables" EntityType="Self.Timetable" />
+    <EntitySet Name="UserGroups" EntityType="Self.UserGroup" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+  </EntityContainer>
+</Schema>

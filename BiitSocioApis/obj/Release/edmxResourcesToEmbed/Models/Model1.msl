@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BIITSOCIOModelStoreContainer" CdmEntityContainer="BIITSOCIOEntities">
+    <EntitySetMapping Name="Allocations">
+      <EntityTypeMapping TypeName="BIITSOCIOModel.Allocation">
+        <MappingFragment StoreEntitySet="Allocation">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="emp_no" ColumnName="emp_no" />
+          <ScalarProperty Name="course_no" ColumnName="course_no" />
+          <ScalarProperty Name="semester_no" ColumnName="semester_no" />
+          <ScalarProperty Name="section" ColumnName="section" />
+          <ScalarProperty Name="Discipline" ColumnName="Discipline" />
+          <ScalarProperty Name="semC" ColumnName="semC" />
+          <ScalarProperty Name="SOS" ColumnName="SOS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chats">
+      <EntityTypeMapping TypeName="BIITSOCIOModel.chat">
+        <MappingFragment StoreEntitySet="chats">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="chat_id" ColumnName="chat_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="dateTime" ColumnName="dateTime" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="chatTo" ColumnName="chatTo" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="url" ColumnName="url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="commentsOns">
+      <EntityTypeMapping TypeName="BIITSOCIOModel.commentsOn">
+        <MappingFragment StoreEntitySet="commentsOn">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="postId" ColumnName="postId" />
+          <ScalarProperty Name="dateTime" ColumnName="dateTime" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="courses">
+      <EntityTypeMapping TypeName="BIITSOCIOModel.course">
+        <MappingFragment StoreEntitySet="course">
+          <ScalarProperty Name="course_no" ColumnName="course_no" />
+          <ScalarProperty Name="course_desc" ColumnName="course_desc" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="crsEnrps">
+      <EntityTypeMapping TypeName="BIITSOCIOModel.crsEnrp">
+        <MappingFragment StoreEntitySet="crsEnrp">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="REG_NO" ColumnName="REG_NO" />
+          <ScalarProperty Name="DISCIPLINE" ColumnName="DISCIPLINE" />
+          <ScalarProperty Name="course_no" ColumnName="course_no" />
+          <ScalarProperty Name="emp_no" ColumnName="emp_no" />
+          <ScalarProperty Name="semester_no" ColumnName="semester_no" />
+          <ScalarProperty Name="Attempt_no" ColumnName="Attempt_no" />
+          <ScalarProperty Name="grade" ColumnName="grade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DateSheets">
+      <EntityTypeMapping TypeName="BIITSOCIOModel.DateSheet">
+        <MappingFragment StoreEntitySet="DateSheet">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="Section" ColumnName="Section" />
+          <ScalarProperty Name="course" ColumnName="course" />
+          <ScalarProperty Name="time" ColumnName="time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Diaries">
+      <EntityTypeMapping TypeName="BIITSOCIOModel.Diary">
+        <MappingFragment StoreEntitySet="Diary">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="post_id" ColumnName="post_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FriendRequests">
+      <EntityTypeMapping TypeName="BIITSOCIOModel.FriendRequest">
+        <MappingFragment StoreEntitySet="FriendRequests">
+          <ScalarProperty Name="RequestedBy" ColumnName="RequestedBy" />
+          <ScalarProperty Name="RequestedTo" ColumnName="RequestedTo" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupChats">
+      <EntityTypeMapping TypeName="BIITSOCIOModel.GroupChat">
+        <MappingFragment StoreEntitySet="GroupChat">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="chatId" ColumnName="chatId" />
+          <ScalarProperty Name="groupId" ColumnName="groupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Groups">
+      <EntityTypeMapping TypeName="BIITSOCIOModel.Group">
+        <MappingFragment StoreEntitySet="Groups">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="memberCount" ColumnName="memberCount" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="isOfficial" ColumnName="isOfficial" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Admin" ColumnName="Admin" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="profile" ColumnName="profile" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="notifications">
+      <EntityTypeMapping TypeName="BIITSOCIOModel.notification">
+        <MappingFragment StoreEntitySet="notifications">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="body" ColumnName="body" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="NotificationTo" ColumnName="NotificationTo" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="dateTime" ColumnName="dateTime" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="post_id" ColumnName="post_id" />
+          <ScalarProperty Name="fromWall" ColumnName="fromWall" />
+          <ScalarProperty Name="ifOfficial" ColumnName="ifOfficial" />
+          <ScalarProperty Name="notificationFrom" ColumnName="notificationFrom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="BIITSOCIOModel.Post">
+        <MappingFragment StoreEntitySet="Posts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="postedBy" ColumnName="postedBy" />
+          <ScalarProperty Name="dateTime" ColumnName="dateTime" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="postFor" ColumnName="postFor" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="likesCount" ColumnName="likesCount" />
+          <ScalarProperty Name="CommentsCount" ColumnName="CommentsCount" />
+          <ScalarProperty Name="user" ColumnName="user" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="fromWall" ColumnName="fromWall" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="BIITSOCIOModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reacts">
+      <EntityTypeMapping TypeName="BIITSOCIOModel.React">
+        <MappingFragment StoreEntitySet="Reacts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="postId" ColumnName="postId" />
+          <ScalarProperty Name="emogie" ColumnName="emogie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SharedPosts">
+      <EntityTypeMapping TypeName="BIITSOCIOModel.SharedPost">
+        <MappingFragment StoreEntitySet="SharedPosts">
+          <ScalarProperty Name="postId" ColumnName="postId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="sharedBy" ColumnName="sharedBy" />
+          <ScalarProperty Name="sharedTo" ColumnName="sharedTo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Societies">
+      <EntityTypeMapping TypeName="BIITSOCIOModel.Society">
+        <MappingFragment StoreEntitySet="Societies">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="profileImage" ColumnName="profileImage" />
+          <ScalarProperty Name="storiesCount" ColumnName="storiesCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stories">
+      <EntityTypeMapping TypeName="BIITSOCIOModel.Story">
+        <MappingFragment StoreEntitySet="Story">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="societyId" ColumnName="societyId" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="time" ColumnName="time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="students">
+      <EntityTypeMapping TypeName="BIITSOCIOModel.student">
+        <MappingFragment StoreEntitySet="student">
+          <ScalarProperty Name="aridNo" ColumnName="aridNo" />
+          <ScalarProperty Name="cnic" ColumnName="cnic" />
+          <ScalarProperty Name="section" ColumnName="section" />
+          <ScalarProperty Name="sonOf" ColumnName="sonOf" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teachers">
+      <EntityTypeMapping TypeName="BIITSOCIOModel.Teacher">
+        <MappingFragment StoreEntitySet="Teacher">
+          <ScalarProperty Name="isTeachingTo" ColumnName="isTeachingTo" />
+          <ScalarProperty Name="cnic" ColumnName="cnic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Timetables">
+      <EntityTypeMapping TypeName="BIITSOCIOModel.Timetable">
+        <MappingFragment StoreEntitySet="Timetable">
+          <ScalarProperty Name="section" ColumnName="section" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="slot" ColumnName="slot" />
+          <ScalarProperty Name="monday" ColumnName="monday" />
+          <ScalarProperty Name="tuesday" ColumnName="tuesday" />
+          <ScalarProperty Name="wednesday" ColumnName="wednesday" />
+          <ScalarProperty Name="thursday" ColumnName="thursday" />
+          <ScalarProperty Name="friday" ColumnName="friday" />
+          <ScalarProperty Name="teacherName" ColumnName="teacherName" />
+          <ScalarProperty Name="courseName" ColumnName="courseName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserGroups">
+      <EntityTypeMapping TypeName="BIITSOCIOModel.UserGroup">
+        <MappingFragment StoreEntitySet="UserGroups">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="groupId" ColumnName="groupId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="BIITSOCIOModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="profileImage" ColumnName="profileImage" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="userType" ColumnName="userType" />
+          <ScalarProperty Name="token" ColumnName="token" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

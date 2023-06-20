@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BIITSOCIOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Allocation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="emp_no" Type="varchar" MaxLength="100" />
+    <Property Name="course_no" Type="varchar" MaxLength="50" />
+    <Property Name="semester_no" Type="varchar" MaxLength="100" />
+    <Property Name="section" Type="varchar" MaxLength="50" />
+    <Property Name="Discipline" Type="varchar" MaxLength="50" />
+    <Property Name="semC" Type="int" />
+    <Property Name="SOS" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="chats">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="userid" Type="varchar" MaxLength="20" />
+    <Property Name="chat_id" Type="varchar" MaxLength="20" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dateTime" Type="varchar" MaxLength="20" />
+    <Property Name="text" Type="varchar(max)" />
+    <Property Name="type" Type="varchar" MaxLength="20" />
+    <Property Name="chatTo" Type="int" />
+    <Property Name="Date" Type="varchar" MaxLength="50" />
+    <Property Name="url" Type="varchar" MaxLength="200" />
+    <Property Name="receivedTime" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="commentsOn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userid" Type="varchar" MaxLength="20" />
+    <Property Name="postId" Type="int" />
+    <Property Name="dateTime" Type="varchar" MaxLength="200" />
+    <Property Name="text" Type="varchar(max)" />
+    <Property Name="type" Type="varchar" MaxLength="20" />
+    <Property Name="repliedOn" Type="int" />
+    <Property Name="likeCount" Type="int" />
+  </EntityType>
+  <EntityType Name="course">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="course_no" Type="varchar" MaxLength="80" />
+    <Property Name="course_desc" Type="varchar" MaxLength="80" />
+    <Property Name="title" Type="varchar" MaxLength="300" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="crsEnrp">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="REG_NO" Type="varchar" MaxLength="100" />
+    <Property Name="DISCIPLINE" Type="varchar" MaxLength="50" />
+    <Property Name="course_no" Type="varchar" MaxLength="80" />
+    <Property Name="emp_no" Type="varchar" MaxLength="50" />
+    <Property Name="semester_no" Type="varchar" MaxLength="50" />
+    <Property Name="Attempt_no" Type="int" />
+    <Property Name="grade" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DateeSheet">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Time" Type="varchar(max)" />
+    <Property Name="examType" Type="varchar(max)" />
+    <Property Name="venue" Type="varchar" MaxLength="500" />
+    <Property Name="section" Type="varchar" MaxLength="500" />
+    <Property Name="paper" Type="varchar" MaxLength="500" />
+    <Property Name="day" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Diary">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="varchar" MaxLength="100" />
+    <Property Name="post_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="500" />
+    <Property Name="startDate" Type="datetime" />
+    <Property Name="endDate" Type="datetime" />
+    <Property Name="colorId" Type="int" />
+  </EntityType>
+  <EntityType Name="FriendRequests">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="RequestedBy" Type="varchar" MaxLength="20" />
+    <Property Name="RequestedTo" Type="varchar" MaxLength="20" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="GroupChat">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="chatId" Type="int" />
+    <Property Name="groupId" Type="int" />
+  </EntityType>
+  <EntityType Name="Groups">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Admin" Type="varchar" MaxLength="200" />
+    <Property Name="name" Type="varchar" MaxLength="200" />
+    <Property Name="profile" Type="varchar(max)" />
+    <Property Name="isOfficial" Type="bit" />
+    <Property Name="date" Type="varchar" MaxLength="100" />
+    <Property Name="memberCount" Type="int" />
+    <Property Name="description" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="JoinedSociety">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="userId" Type="varchar" MaxLength="200" />
+    <Property Name="societyId" Type="int" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="isMentor" Type="bit" />
+  </EntityType>
+  <EntityType Name="MutedGroups">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userId" Type="varchar" MaxLength="200" />
+    <Property Name="groupId" Type="int" />
+  </EntityType>
+  <EntityType Name="notifications">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="body" Type="varchar" MaxLength="100" />
+    <Property Name="title" Type="varchar" MaxLength="50" />
+    <Property Name="NotificationTo" Type="varchar(max)" />
+    <Property Name="status" Type="int" />
+    <Property Name="dateTime" Type="varchar" MaxLength="50" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="post_id" Type="int" />
+    <Property Name="fromWall" Type="int" />
+    <Property Name="ifOfficial" Type="bit" />
+    <Property Name="notificationFrom" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Posts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="postedBy" Type="varchar" MaxLength="20" />
+    <Property Name="dateTime" Type="varchar" MaxLength="100" />
+    <Property Name="text" Type="varchar(max)" />
+    <Property Name="type" Type="varchar" MaxLength="20" />
+    <Property Name="postFor" Type="varchar(max)" />
+    <Property Name="description" Type="varchar(max)" />
+    <Property Name="likesCount" Type="int" />
+    <Property Name="CommentsCount" Type="int" />
+    <Property Name="user" Type="varchar(max)" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+    <Property Name="fromWall" Type="varchar" MaxLength="50" />
+    <Property Name="isParentAllowed" Type="bit" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="phone" Type="varchar" MaxLength="50" />
+    <Property Name="id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reacts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userid" Type="varchar" MaxLength="20" />
+    <Property Name="postId" Type="int" />
+    <Property Name="emogie" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="SharedPosts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="postId" Type="int" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sharedBy" Type="int" />
+    <Property Name="sharedTo" Type="int" />
+  </EntityType>
+  <EntityType Name="Societies">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" />
+    <Property Name="profileImage" Type="varchar" MaxLength="200" />
+    <Property Name="storiesCount" Type="int" />
+  </EntityType>
+  <EntityType Name="Story">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="societyId" Type="int" />
+    <Property Name="url" Type="varchar" MaxLength="100" />
+    <Property Name="text" Type="varchar(max)" />
+    <Property Name="color" Type="int" />
+    <Property Name="time" Type="varchar" MaxLength="200" />
+    <Property Name="storyFor" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="aridNo" />
+    </Key>
+    <Property Name="aridNo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="cnic" Type="varchar" MaxLength="20" />
+    <Property Name="section" Type="varchar" MaxLength="15" />
+    <Property Name="sonOf" Type="varchar" MaxLength="20" />
+    <Property Name="semesterC" Type="int" />
+    <Property Name="descipline" Type="varchar" MaxLength="100" />
+    <Property Name="Semester_no" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Teacher">
+    <Key>
+      <PropertyRef Name="cnic" />
+    </Key>
+    <Property Name="isTeachingTo" Type="varchar(max)" />
+    <Property Name="cnic" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Timetable">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="slot" Type="varchar" MaxLength="100" />
+    <Property Name="monday" Type="varchar" MaxLength="100" />
+    <Property Name="tuesday" Type="varchar" MaxLength="100" />
+    <Property Name="wednesday" Type="varchar" MaxLength="100" />
+    <Property Name="thursday" Type="varchar" MaxLength="100" />
+    <Property Name="friday" Type="varchar" MaxLength="100" />
+    <Property Name="teacherName" Type="varchar" MaxLength="100" />
+    <Property Name="courseName" Type="varchar" MaxLength="100" />
+    <Property Name="section" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UserGroups">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="groupId" Type="int" />
+    <Property Name="userId" Type="varchar" MaxLength="20" />
+    <Property Name="isMuted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="CNIC" />
+    </Key>
+    <Property Name="CNIC" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="70" />
+    <Property Name="profileImage" Type="varchar(max)" />
+    <Property Name="phone" Type="varchar" MaxLength="20" />
+    <Property Name="userType" Type="varchar" MaxLength="20" />
+    <Property Name="token" Type="varchar(max)" />
+    <Property Name="lastLogged" Type="varchar(max)" />
+    <Property Name="TAOf" Type="varchar" MaxLength="100" />
+    <Property Name="CrOf" Type="varchar" MaxLength="100" />
+    <Property Name="dateSheetAllowed" Type="bit" />
+    <Property Name="timeTableAllowed" Type="bit" />
+    <Property Name="personalAllowed" Type="bit" />
+    <Property Name="classAllowed" Type="bit" />
+    <Property Name="parentAllowedByTeacher" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="BIITSOCIOModelStoreContainer">
+    <EntitySet Name="Allocation" EntityType="Self.Allocation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="chats" EntityType="Self.chats" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="commentsOn" EntityType="Self.commentsOn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="course" EntityType="Self.course" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="crsEnrp" EntityType="Self.crsEnrp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DateeSheet" EntityType="Self.DateeSheet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Diary" EntityType="Self.Diary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FriendRequests" EntityType="Self.FriendRequests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupChat" EntityType="Self.GroupChat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Groups" EntityType="Self.Groups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JoinedSociety" EntityType="Self.JoinedSociety" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MutedGroups" EntityType="Self.MutedGroups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="notifications" EntityType="Self.notifications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Posts" EntityType="Self.Posts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reacts" EntityType="Self.Reacts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SharedPosts" EntityType="Self.SharedPosts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Societies" EntityType="Self.Societies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Story" EntityType="Self.Story" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Timetable" EntityType="Self.Timetable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserGroups" EntityType="Self.UserGroups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
